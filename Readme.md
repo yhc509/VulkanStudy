@@ -9,6 +9,7 @@
 - Drawing a triangle
   - Setup
     - [Base code](https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Base_code)
+- [Note : Vulkan vs OpenGL](note/Vulkan%20vs%20OpenGL%20040aaad0f73d4df2b1c186592696ca58.md)
 
 ## Week #2 (2022.08.01)
 - Drawing a triangle
@@ -21,7 +22,7 @@
 ## Week #3 (2022.08.08)
 - Drawing a triangle
   - Presentaion
-    - Window surface
+    - [Window surface](https://vulkan-tutorial.com/Drawing_a_triangle/Presentation/Window_surface)
     - Swap chain
     - Image views
   - Graphics pipeline basics
