@@ -23,7 +23,7 @@
 - Drawing a triangle
   - Presentaion
     - [Window surface](https://vulkan-tutorial.com/Drawing_a_triangle/Presentation/Window_surface)
-    - Swap chain
+    - [Swap chain](https://vulkan-tutorial.com/Drawing_a_triangle/Presentation/Swap_chain)
     - Image views
   - Graphics pipeline basics
     - Introduction
