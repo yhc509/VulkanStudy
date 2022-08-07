@@ -24,6 +24,6 @@
   - Presentaion
     - [Window surface](https://vulkan-tutorial.com/Drawing_a_triangle/Presentation/Window_surface)
     - [Swap chain](https://vulkan-tutorial.com/Drawing_a_triangle/Presentation/Swap_chain)
-    - Image views
+    - [Image views](https://vulkan-tutorial.com/Drawing_a_triangle/Presentation/Image_views)
   - Graphics pipeline basics
-    - Introduction
+    - [Introduction](https://vulkan-tutorial.com/Drawing_a_triangle/Graphics_pipeline_basics/Introduction)

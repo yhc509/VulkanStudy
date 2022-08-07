@@ -87,6 +87,8 @@ private:
     VkFormat swapChainImageFormat;
     VkExtent2D swapChainExtent;
 
+    std::vector<VkImageView> swapChainImageViews;
+
     void initWindow() {
         glfwInit();
 
@@ -104,6 +106,8 @@ private:
         pickPhysicalDevice();
         createLogicalDevice();
         createSwapChain();
+        createImageViews();
+        createGraphicsPipeline();
     }
 
     void mainLoop() {
@@ -113,6 +117,10 @@ private:
     }
 
     void cleanup() {
+        for (auto imageView : swapChainImageViews) {
+            vkDestroyImageView(device, imageView, nullptr);
+        }
+
         vkDestroySwapchainKHR(device, swapChain, nullptr);
         vkDestroyDevice(device, nullptr);
 
@@ -428,6 +436,55 @@ private:
         }
 
         return details;
+    }
+
+    void createImageViews() {
+        swapChainImageViews.resize(swapChainImages.size());
+
+        for (size_t i = 0; i < swapChainImages.size(); i++) {
+            VkImageViewCreateInfo createInfo{};
+            createInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+            createInfo.image = swapChainImages[i];
+            createInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
+            createInfo.format = swapChainImageFormat;
+            createInfo.components.r = VK_COMPONENT_SWIZZLE_IDENTITY;
+            createInfo.components.g = VK_COMPONENT_SWIZZLE_IDENTITY;
+            createInfo.components.b = VK_COMPONENT_SWIZZLE_IDENTITY;
+            createInfo.components.a = VK_COMPONENT_SWIZZLE_IDENTITY;
+            createInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+            createInfo.subresourceRange.baseMipLevel = 0;
+            createInfo.subresourceRange.levelCount = 1;
+            createInfo.subresourceRange.baseArrayLayer = 0;
+            createInfo.subresourceRange.layerCount = 1;
+
+            if (vkCreateImageView(device, &createInfo, nullptr, &swapChainImageViews[i]) != VK_SUCCESS) {
+                throw std::runtime_error("failed to create image views!");
+            }
+        }
+    }
+
+    void createGraphicsPipeline() {
+        /*
+        []가 된 단계는 고정 기능 단계. 매개변수로 조정은 할 수 있지만 작동 방식은 이미 정의되어 있음.
+        <>가 된 단계는 프로그래밍 할 수 있는 영역.
+        
+        [Input assembler]
+        : 지정한 버퍼에서 원시 정점 데이터를 수집.
+        <Vertex shader>
+        : 모든 정점에 대해 실행. 모델 공간에서 화면 공간으로 변환. 정점 데이터 전달.
+        <Tessellation>
+        : 특정 규칙에 따라 지오메트리를 세분화하여 품질 높일 수 있음.
+        <Geometry shader>
+        : 모든 Premitive(삼각형, 점, 선)에서 실행. 들어온 것보다 더 많은 Premitive를 출력할 수 있음.
+        : Tessellation과 유사하지만 더 유연함. 대부분의 그래픽 카드에서 성능이 좋지 않아 많이 사용되지 않음.
+        [Resterization]
+        : Premitive를 조각으로 이산화 함. (픽셀로 바꿈)
+        : 화면 밖의 픽셀이나 가려진 픽셀을 폐기(컬링)함.
+        <Fragment shader>
+        : 살아남은 픽셀들에 대해 실행. Fragment가 기록되는 프레임 버퍼와 색상, 깊이 값을 결정함.
+        [Color blending]
+        : 프레임 버퍼의 동일한 픽셀에 매핑되는 조각들을 혼합함. (투명도 같은)
+        */
     }
 
     // 수행하려는 작업에 적합한 그래픽 카드인지 검사하는 함수.
