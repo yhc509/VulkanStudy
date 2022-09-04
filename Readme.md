@@ -37,7 +37,19 @@
 ## Week #5 (2022.08.22)
   - Graphics pipeline basics
     - [Conclusion](https://vulkan-tutorial.com/Drawing_a_triangle/Graphics_pipeline_basics/Conclusion)
-  - Drawing
+  - Drawing a triangle
     - [Framebuffers](https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Framebuffers)
     - [Command buffers](https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Command_buffers)
     - [Rendering and presentation](https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Rendering_and_presentation)
+
+
+## Week #6 (2022.08.29)
+  - Drawing a triangle
+    - [Frames in flight](https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Frames_in_flight)
+  - [Swap chain recreation](https://vulkan-tutorial.com/Drawing_a_triangle/Swap_chain_recreation)
+
+
+## Week #7 (2022.09.05)
+  - Vertex buffers
+    - [Vertex input description](https://vulkan-tutorial.com/Vertex_buffers/Vertex_input_description)
+    - [Vertex buffer creation](https://vulkan-tutorial.com/Vertex_buffers/Vertex_buffer_creation)
