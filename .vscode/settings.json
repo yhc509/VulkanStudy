@@ -76,7 +76,9 @@
         "deque": "cpp",
         "fstream": "cpp",
         "iomanip": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "__tree": "cpp",
+        "set": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
