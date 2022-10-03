@@ -53,3 +53,18 @@
   - Vertex buffers
     - [Vertex input description](https://vulkan-tutorial.com/Vertex_buffers/Vertex_input_description)
     - [Vertex buffer creation](https://vulkan-tutorial.com/Vertex_buffers/Vertex_buffer_creation)
+
+## Week #8 (2022.09.19)
+  - Vertex buffers
+    - [Staging buffer](https://vulkan-tutorial.com/Vertex_buffers/Staging_buffer)
+    - [Index buffer](https://vulkan-tutorial.com/Vertex_buffers/Index_buffer)
+
+## Week #9 (2022.09.26)
+  - Uniform buffers
+    - [Descriptor layout and buffer](https://vulkan-tutorial.com/Uniform_buffers/Descriptor_layout_and_buffer)
+    - [Descriptor pool and sets](https://vulkan-tutorial.com/Uniform_buffers/Descriptor_pool_and_sets)
+
+## Week #10 (2022.10.03)
+  - Texture mapping
+    - [Images](https://vulkan-tutorial.com/Texture_mapping/Images)
+    - [Image view and sampler](https://vulkan-tutorial.com/Texture_mapping/Image_view_and_sampler)
