@@ -1268,8 +1268,6 @@ private:
     void copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width, uint32_t height) {
         VkCommandBuffer commandBuffer = beginSingleTimeCommands();
 
-        endSingleTimeCommands(commandBuffer);
-
         VkBufferImageCopy region{};
         region.bufferOffset = 0;
         region.bufferRowLength = 0;
@@ -1295,6 +1293,9 @@ private:
             1,
             &region
         );
+
+        endSingleTimeCommands(commandBuffer);
+
     }
 
     void createCommandBuffers() {
